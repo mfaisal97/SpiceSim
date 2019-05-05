@@ -1,0 +1,5 @@
+all: main.c
+	g++ -o spiceSim main.c -Werror
+
+clean :
+	rm spiceSim spiceSim.o
