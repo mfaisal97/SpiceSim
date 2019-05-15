@@ -19,6 +19,7 @@ files_list = [f for f in listdir(input_home_directory) if isfile(join(input_home
 input_file_name = "test.txt"
 output_pin_name = ""
 PUN_Ind = 1
+NET_LIST_Counter = 1
 
 negations = []
 negationsstr= ""
@@ -84,7 +85,7 @@ def parseExpression(expr):
                         exprList[i] = "|"
                     elif exprList[i] == '"':
                         exprList[i] = "'"
-                expr = str(exprList)
+                expr = ''.join(exprList)
                 return parseExpression(expr[1:len(expr)-1])
         else:
             for i in range(openInd, closeInd + 1):
@@ -94,20 +95,23 @@ def parseExpression(expr):
                     exprList[i] = "+"
                 elif exprList[i] == "'":
                     exprList[i] = '"'
-        expr = str(exprList)
+        expr = ''.join(exprList)
         
 
 
-    if '&' in expr:
-        parsed_operands = expr.split("&")
-        parsed_type = operandType.andOperand
+    
+    
+    if '|' in expr:
+        parsed_operands = expr.split("|")
+        parsed_type = operandType.orOperand
         operands = list(map(parseExpression, parsed_operands))
         for i in range(0, len(operands)):
             operands[i]['branchNumber'] = i
     
-    elif '|' in expr:
-        parsed_operands = expr.split("|")
-        parsed_type = operandType.orOperand
+    
+    elif '&' in expr:
+        parsed_operands = expr.split("&")
+        parsed_type = operandType.andOperand
         operands = list(map(parseExpression, parsed_operands))
         for i in range(0, len(operands)):
             operands[i]['branchNumber'] = i
@@ -196,11 +200,17 @@ def parseFile(file_name, out_file_name = "out.txt"):
 
 
 def generateNetwork(expr, upNet = "vdd", downNet = output_pin_name, MOS= "PMOS"):
-    global PUN_Ind, negations
+    global PUN_Ind, negations, NET_LIST_Counter
 
     PUN  = []
 
-    if expr['op_type'] == operandType.andOperand:
+    
+
+    if expr['op_type'] == operandType.orOperand:
+        for i in range(0, len(expr['operands'])):
+            PUN = PUN + generateNetwork(expr['operands'][i], upNet, downNet, MOS=MOS)
+
+    elif expr['op_type'] == operandType.andOperand:
         NETS =[]
         if expr['branchNumber'] == 0:
             NETS = [upNet ] + [upNet +str(i) + downNet for i in range(1,len(expr['operands']))] + [downNet]
@@ -208,11 +218,6 @@ def generateNetwork(expr, upNet = "vdd", downNet = output_pin_name, MOS= "PMOS")
             NETS = [upNet ] + [upNet + "B" + str(expr['branchNumber']) + "B" + str(i) + downNet for i in range(1,len(expr['operands']))] + [downNet]
         for i in range(0, len(expr['operands'])):
             PUN = PUN + generateNetwork(expr['operands'][i], NETS[i], NETS[i+1], MOS=MOS)
-
-
-    elif expr['op_type'] == operandType.orOperand:
-        for i in range(0, len(expr['operands'])):
-            PUN = PUN + generateNetwork(expr['operands'][i], upNet, downNet, MOS=MOS)
 
 
     elif expr['op_type'] == operandType.notOperand:

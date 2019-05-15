@@ -1,8 +1,12 @@
-M1       vdd1x    a        vdd      vdd      PMOS     
-M2       x        b        vdd1x    vdd1x    PMOS     
+M1       vdd1y    A        vdd      vdd      PMOS     
+M2       vdd2y    B        vdd1y    vdd1y    PMOS     
+M3       y        C        vdd2y    vdd2y    PMOS     
+M4       y        D        vdd      vdd      PMOS     
 
 
-M3      x       a       gnd     gnd     NMOS    
-M4      x       b       gnd     gnd     NMOS    
+M5       gnd1y    A        gnd      gnd      NMOS     
+M6       gnd1y    B        gnd      gnd      NMOS     
+M7       gnd1y    C        gnd      gnd      NMOS     
+M8       y        D        gnd1y    gnd1y    NMOS     
 
 

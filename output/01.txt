@@ -1,18 +1,18 @@
 M1       vdd1y    a'       vdd      vdd      PMOS     
 M2       y        b'       vdd1y    vdd1y    PMOS     
-M3       y        c'       vdd1y    vdd1y    PMOS     
+M3       y        c'       vdd      vdd      PMOS     
 
 
-M4          y           a'          gnd         gnd         NMOS        
-M5          gndB1B1y    b'          gnd         gnd         NMOS        
-M6          y           c'          gndB1B1y    gndB1B1y    NMOS        
+M4       gnd1y    a'       gnd      gnd      NMOS     
+M5       gnd1y    b'       gnd      gnd      NMOS     
+M6       y        c'       gnd1y    gnd1y    NMOS     
 
 
-M7      c'      c       vdd     vdd     PMOS    
-M8      c'      c       gnd     gnd     NMOS    
+M7      a'      a       vdd     vdd     PMOS    
+M8      a'      a       gnd     gnd     NMOS    
 
-M9      a'      a       vdd     vdd     PMOS    
-M10     a'      a       gnd     gnd     NMOS    
+M9      c'      c       vdd     vdd     PMOS    
+M10     c'      c       gnd     gnd     NMOS    
 
 M11     b'      b       vdd     vdd     PMOS    
 M12     b'      b       gnd     gnd     NMOS    
