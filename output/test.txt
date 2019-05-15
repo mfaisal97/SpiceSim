@@ -1,0 +1,8 @@
+M1       vdd1x    a        vdd      vdd      PMOS     
+M2       x        b        vdd1x    vdd1x    PMOS     
+
+
+M3      x       a       gnd     gnd     NMOS    
+M4      x       b       gnd     gnd     NMOS    
+
+

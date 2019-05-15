@@ -1,71 +1,26 @@
-M55      vdd1y    a'       vdd      vdd      PMOS     
-M56      vdd2y    b'       vdd1y    vdd1y    PMOS     
-M57      y        c'       vdd2y    vdd2y    PMOS     
-M61      z        y'       vdd      vdd      PMOS     
-M62      z        c        vdd      vdd      PMOS     
+M1       vdd1y    a'       vdd      vdd      PMOS     
+M2       vdd2y    b'       vdd1y    vdd1y    PMOS     
+M3       y        c'       vdd2y    vdd2y    PMOS     
+M7       z        y'       vdd      vdd      PMOS     
+M8       z        c        vdd      vdd      PMOS     
 
 
-M58      y        a'       gnd      gnd      NMOS     
-M59      y        b'       gnd      gnd      NMOS     
-M60      y        c'       gnd      gnd      NMOS     
-M63      gnd1z    y'       gnd      gnd      NMOS     
-M64      z        c        gnd1z    gnd1z    NMOS     
+M4       y        a'       gnd      gnd      NMOS     
+M5       y        b'       gnd      gnd      NMOS     
+M6       y        c'       gnd      gnd      NMOS     
+M9       gnd1z    y'       gnd      gnd      NMOS     
+M10      z        c        gnd1z    gnd1z    NMOS     
 
 
-M9      d'      d       vdd     vdd     PMOS    
-M10     d'      d       gnd     gnd     NMOS    
+M11     c'      c       vdd     vdd     PMOS    
+M12     c'      c       gnd     gnd     NMOS    
 
-M15     bIc'    bIc     vdd     vdd     PMOS    
-M16     bIc'    bIc     gnd     gnd     NMOS    
+M13     a'      a       vdd     vdd     PMOS    
+M14     a'      a       gnd     gnd     NMOS    
 
-M17     a'      a       vdd     vdd     PMOS    
-M18     a'      a       gnd     gnd     NMOS    
+M15     y'      y       vdd     vdd     PMOS    
+M16     y'      y       gnd     gnd     NMOS    
 
-M19     d'      d       vdd     vdd     PMOS    
-M20     d'      d       gnd     gnd     NMOS    
-
-M27     bIc'    bIc     vdd     vdd     PMOS    
-M28     bIc'    bIc     gnd     gnd     NMOS    
-
-M29     b'      b       vdd     vdd     PMOS    
-M30     b'      b       gnd     gnd     NMOS    
-
-M31     a'      a       vdd     vdd     PMOS    
-M32     a'      a       gnd     gnd     NMOS    
-
-M33     d'      d       vdd     vdd     PMOS    
-M34     d'      d       gnd     gnd     NMOS    
-
-M45     bIc'    bIc     vdd     vdd     PMOS    
-M46     bIc'    bIc     gnd     gnd     NMOS    
-
-M47     b'      b       vdd     vdd     PMOS    
-M48     b'      b       gnd     gnd     NMOS    
-
-M49     a'      a       vdd     vdd     PMOS    
-M50     a'      a       gnd     gnd     NMOS    
-
-M51     y'      y       vdd     vdd     PMOS    
-M52     y'      y       gnd     gnd     NMOS    
-
-M53     d'      d       vdd     vdd     PMOS    
-M54     d'      d       gnd     gnd     NMOS    
-
-M65     bIc'    bIc     vdd     vdd     PMOS    
-M66     bIc'    bIc     gnd     gnd     NMOS    
-
-M67     a'      a       vdd     vdd     PMOS    
-M68     a'      a       gnd     gnd     NMOS    
-
-M69     c'      c       vdd     vdd     PMOS    
-M70     c'      c       gnd     gnd     NMOS    
-
-M71     y'      y       vdd     vdd     PMOS    
-M72     y'      y       gnd     gnd     NMOS    
-
-M73     b'      b       vdd     vdd     PMOS    
-M74     b'      b       gnd     gnd     NMOS    
-
-M75     d'      d       vdd     vdd     PMOS    
-M76     d'      d       gnd     gnd     NMOS    
+M17     b'      b       vdd     vdd     PMOS    
+M18     b'      b       gnd     gnd     NMOS    
 
