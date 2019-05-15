@@ -144,7 +144,11 @@ def getNegations():
 
 
 def parseFile(file_name, out_file_name = "out.txt"):
-    global output_pin_name, expression, negationsstr
+    global output_pin_name, expression, negationsstr, negations, PUN_Ind
+    expression = []
+    negations = []
+    negationsstr = ""
+    PUN_Ind = 1
 
     expr1_out = []
     expr2_out = []
